@@ -19,6 +19,12 @@ export default defineNuxtConfig({
     denom: '',
     amount: '',
   },
+  hooks: {
+    'nitro:config'(config) {
+      config.moduleSideEffects = config.moduleSideEffects || []
+      config.moduleSideEffects.push(config.buildDir + '/workflow')
+    },
+  },
   vite: {
     plugins: [
       tailwindcss(),

@@ -1,0 +1,13 @@
+services:
+  faucet:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - workflow-data:/app/.workflow-data
+    restart: unless-stopped
+
+volumes:
+  workflow-data:

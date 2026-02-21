@@ -39,6 +39,16 @@ pnpm build
 node .output/server/index.mjs
 ```
 
+## Docker
+
+```bash
+cp .env.example .env
+# fill in .env values
+docker compose up --build -d
+```
+
+The faucet will be available at http://localhost:3000
+
 ## API
 
 ### Request tokens
